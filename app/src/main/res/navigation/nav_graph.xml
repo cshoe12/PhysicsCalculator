@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homePage">
+
+    <fragment
+        android:id="@+id/homePage"
+        android:name="com.example.physicscalculator.HomePage"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePage_to_unitsHomeFragment"
+            app:destination="@id/unitsHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lengthFragment"
+        android:name="com.example.physicscalculator.LengthFragment"
+        android:label="fragment_length"
+        tools:layout="@layout/fragment_length" />
+    <fragment
+        android:id="@+id/massFragment"
+        android:name="com.example.physicscalculator.MassFragment"
+        android:label="fragment_mass"
+        tools:layout="@layout/fragment_mass" />
+    <fragment
+        android:id="@+id/timeFragment"
+        android:name="com.example.physicscalculator.TimeFragment"
+        android:label="fragment_time"
+        tools:layout="@layout/fragment_time" />
+    <fragment
+        android:id="@+id/unitsHomeFragment"
+        android:name="com.example.physicscalculator.UnitsHomeFragment"
+        android:label="fragment_units_home"
+        tools:layout="@layout/fragment_units_home" >
+        <action
+            android:id="@+id/action_unitsHomeFragment_to_lengthFragment"
+            app:destination="@id/lengthFragment" />
+        <action
+            android:id="@+id/action_unitsHomeFragment_to_volumeFragment"
+            app:destination="@id/volumeFragment" />
+        <action
+            android:id="@+id/action_unitsHomeFragment_to_timeFragment"
+            app:destination="@id/timeFragment" />
+        <action
+            android:id="@+id/action_unitsHomeFragment_to_massFragment"
+            app:destination="@id/massFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/volumeFragment"
+        android:name="com.example.physicscalculator.VolumeFragment"
+        android:label="fragment_volume"
+        tools:layout="@layout/fragment_volume" />
+</navigation>
