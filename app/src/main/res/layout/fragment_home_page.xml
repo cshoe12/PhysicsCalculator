@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/home_background_blue"
     tools:context=".HomePage">
 
     <!-- TODO: Update blank fragment layout -->
@@ -11,9 +12,11 @@
         android:id="@+id/home_title_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Physics Calculator"
-        android:textSize="40sp"
         android:layout_marginTop="25dp"
+        android:text="Physics Calculator"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        android:textColor ="@color/home_title_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,7 +24,55 @@
     <Button
         android:id="@+id/units_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="Units"
+        android:textColor="@color/home_buttonText_grey"
+        android:backgroundTint="@color/home_button_grey"
+        android:textSize="30sp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/vectors_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_title_textView"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/vectors_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vectors"
+        android:textSize="30sp"
+        android:textColor="@color/home_buttonText_grey"
+        android:backgroundTint="@color/home_button_grey"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/kinematics_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/units_button" />
+
+    <Button
+        android:id="@+id/kinematics_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kinematics"
+        android:textSize="30sp"
+        android:textColor="@color/home_buttonText_grey"
+        android:backgroundTint="@color/home_button_grey"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vectors_button" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/atom_pt4"
+        android:layout_marginTop="20dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kinematics_button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
