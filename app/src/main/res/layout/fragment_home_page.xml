@@ -29,7 +29,7 @@
         android:textColor="@color/home_buttonText_grey"
         android:backgroundTint="@color/home_button_grey"
         android:textSize="30sp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintBottom_toTopOf="@+id/vectors_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,12 +64,13 @@
         app:layout_constraintTop_toBottomOf="@+id/vectors_button" />
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/atom_pt4"
-        android:layout_marginTop="20dp"
-
+        android:id="@+id/atom_imageView"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/atom_pt5"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/kinematics_button" />

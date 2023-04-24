@@ -13,4 +13,8 @@
     <color name="home_button_grey">#cccccc</color>
     <color name="home_buttonText_grey">#666666</color>
 
+    <color name="units_mainGreen">#d1e0b8</color>
+    <color name="units_darkerGreen">#526a2f</color>
+
+
 </resources>
