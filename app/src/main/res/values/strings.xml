@@ -2,4 +2,43 @@
     <string name="app_name">Physics Calculator</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="volume_units">
+        <item>L</item>
+        <item>mL</item>
+        <item>cm^3</item> //how can i get this to display normally
+    </string-array>
+
+    <string-array name="time_units">
+        <item>s</item>
+        <item>nano-s</item>
+        <item>micro-s</item>
+        <item>milli-s</item>
+        <item>min</item>
+        <item>hour</item>
+        <item>day</item>
+        <item>week</item>
+        <item>year</item>
+    </string-array>
+
+    <string-array name="mass_units">
+        <item>kg</item>
+        <item>g</item>
+        <item>mg</item>
+        <item>lbs</item>
+    </string-array>
+
+    <string-array name="length_units">
+        <item>m</item>
+        <item>cm</item>
+        <item>km</item>
+        <item>mm</item>
+        <item>micro-m</item>
+        <item>nano-m</item>
+        <item>ft</item>
+        <item>in</item>
+        <item>yd</item>
+        <item>mi</item>
+        <item>angstrom</item>
+    </string-array>
 </resources>
