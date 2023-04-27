@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.physicscalculator.databinding.FragmentMassBinding
+
 import com.example.physicscalculator.databinding.FragmentTimeBinding
 
 class TimeFragment : Fragment() {

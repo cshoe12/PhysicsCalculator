@@ -9,7 +9,7 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/volume_title_textView"
+        android:id="@+id/V_title_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Volume"
@@ -22,52 +22,54 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/og_value_editText"
+        android:id="@+id/M_og_value_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:hint="Starting Number"
         android:inputType="number"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/volume_title_textView" />
+        app:layout_constraintTop_toBottomOf="@+id/V_title_textView" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/M_initial_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/og_value_editText"
-        app:layout_constraintStart_toEndOf="@+id/og_value_editText"
-        app:layout_constraintTop_toTopOf="@+id/og_value_editText" />
+        app:layout_constraintBottom_toBottomOf="@+id/M_og_value_editText"
+        app:layout_constraintStart_toEndOf="@+id/M_og_value_editText"
+        app:layout_constraintTop_toTopOf="@+id/M_og_value_editText" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/T_arrow_imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-
         android:src="@drawable/ic_baseline_arrow_right_alt_24"
-        app:layout_constraintBottom_toBottomOf="@+id/og_value_editText"
-        app:layout_constraintStart_toEndOf="@+id/spinner"
-        app:layout_constraintTop_toTopOf="@+id/og_value_editText" />
+        app:layout_constraintBottom_toBottomOf="@+id/M_og_value_editText"
+        app:layout_constraintStart_toEndOf="@+id/M_initial_spinner"
+        app:layout_constraintTop_toTopOf="@+id/M_og_value_editText" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/M_final_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/og_value_editText"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/og_value_editText" />
+        app:layout_constraintBottom_toBottomOf="@+id/M_og_value_editText"
+        app:layout_constraintStart_toEndOf="@+id/T_arrow_imageView"
+        app:layout_constraintTop_toTopOf="@+id/M_og_value_editText" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/volume_answer_textView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="TextView"-->
-<!--        tools:layout_editor_absoluteX="85dp"-->
-<!--        tools:layout_editor_absoluteY="257dp" />-->
+    <TextView
+        android:id="@+id/M_answer_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ANSWER"
+        android:textSize="25sp"
+        android:layout_marginTop="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/M_initial_spinner" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
