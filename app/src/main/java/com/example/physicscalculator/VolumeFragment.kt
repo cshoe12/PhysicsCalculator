@@ -22,13 +22,22 @@ class VolumeFragment : Fragment() {
         _binding = FragmentVolumeBinding.inflate(inflater, container, false)
         val rootView = binding.root
 
-        val unitsArrayAdapter = ArrayAdapter.createFromResource(requireActivity(), R.array.volume_units,
-            android.R.layout.simple_spinner_item)
-        unitsArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-       binding.VinitialSpinner.adapter = unitsArrayAdapter
+        spinner()
 
 
         return rootView
     }
+    fun spinner(){
+        val initialUnitsArrayAdapter = ArrayAdapter.createFromResource(requireActivity(), R.array.volume_units,
+            android.R.layout.simple_spinner_item)
+        initialUnitsArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.initialSpinner.adapter = initialUnitsArrayAdapter
 
+        val finalUnitsArrayAdapter = ArrayAdapter.createFromResource(requireActivity(), R.array.volume_units,
+            android.R.layout.simple_spinner_item)
+        finalUnitsArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.finalSpinner.adapter = finalUnitsArrayAdapter
+    }
 }
+
+
