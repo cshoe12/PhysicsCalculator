@@ -9,6 +9,11 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="home_background_blue">#87CEEB</color>
+    <color name="dark_blue">#25a7da</color>
+    <color name="darker_blue">#1a7599</color>
+    <color name="more_darker_blue">#12536d</color>
+    <color name="darkest_blue">#0b3241</color>
+
     <color name="home_title_blue">#166483</color>
     <color name="home_button_grey">#cccccc</color>
     <color name="home_buttonText_grey">#666666</color>

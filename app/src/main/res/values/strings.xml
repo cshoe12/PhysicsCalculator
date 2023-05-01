@@ -6,7 +6,8 @@
     <string-array name="volume_units">
         <item>L</item>
         <item>mL</item>
-        <item>cm^3</item> //how can i get this to display normally
+        <item>cm^3</item>
+        //how can i get this to display normally
     </string-array>
 
     <string-array name="time_units">

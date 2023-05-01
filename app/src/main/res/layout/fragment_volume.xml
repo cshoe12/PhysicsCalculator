@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/units_mainGreen"
+    android:background="@color/home_background_blue"
     tools:context=".VolumeFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="Volume"
         android:layout_marginTop="25dp"
-        android:textColor="@color/units_darkerGreen"
+        android:textColor="@color/more_darker_blue"
         android:textSize="45sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,14 +27,14 @@
         android:layout_height="wrap_content"
         android:hint="Starting Number"
         android:inputType="number"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/V_title_textView" />
 
     <Spinner
         android:id="@+id/initial_spinner"
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/og_value_editText"
@@ -46,16 +46,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-        android:src="@drawable/ic_baseline_arrow_right_alt_24"
+        android:src="@drawable/arrow"
         app:layout_constraintBottom_toBottomOf="@+id/og_value_editText"
         app:layout_constraintStart_toEndOf="@+id/initial_spinner"
         app:layout_constraintTop_toTopOf="@+id/og_value_editText" />
 
     <Spinner
         android:id="@+id/final_spinner"
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/og_value_editText"
         app:layout_constraintStart_toEndOf="@+id/T_arrow_imageView"
         app:layout_constraintTop_toTopOf="@+id/og_value_editText" />
@@ -66,7 +66,7 @@
         android:layout_height="wrap_content"
         android:text="ANSWER"
         android:textSize="25sp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="175dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/go_button" />
@@ -77,7 +77,7 @@
         android:layout_height="wrap_content"
         android:text="GO"
         android:textSize="24sp"
-        android:backgroundTint="@color/units_darkerGreen"
+        android:backgroundTint="@color/more_darker_blue"
         android:layout_marginTop="250dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
