@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homePage_to_unitsHomeFragment"
             app:destination="@id/unitsHomeFragment" />
+        <action
+            android:id="@+id/action_homePage_to_vectorsHomePage"
+            app:destination="@id/vectorsHomePage" />
     </fragment>
     <fragment
         android:id="@+id/lengthFragment"
@@ -52,4 +55,9 @@
         android:name="com.example.physicscalculator.VolumeFragment"
         android:label="fragment_volume"
         tools:layout="@layout/fragment_volume" />
+    <fragment
+        android:id="@+id/vectorsHomePage"
+        android:name="com.example.physicscalculator.VectorsHomePage"
+        android:label="vectors"
+        tools:layout="@layout/vectors" />
 </navigation>

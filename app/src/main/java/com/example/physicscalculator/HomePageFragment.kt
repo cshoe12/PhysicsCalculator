@@ -25,6 +25,10 @@ class HomePage : Fragment() {
             rootView.findNavController()
                 .navigate(R.id.action_homePage_to_unitsHomeFragment)
         }
+        binding.vectorsButton.setOnClickListener{
+            rootView.findNavController()
+                .navigate(R.id.action_homePage_to_vectorsHomePage)
+        }
 
         return rootView
     }
