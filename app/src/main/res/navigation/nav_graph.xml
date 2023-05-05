@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homePage_to_vectorsHomePage"
             app:destination="@id/vectorsHomePage" />
+        <action
+            android:id="@+id/action_homePage_to_kinematicsHomePage"
+            app:destination="@id/kinematicsHomePage" />
     </fragment>
     <fragment
         android:id="@+id/lengthFragment"
@@ -60,4 +63,18 @@
         android:name="com.example.physicscalculator.VectorsHomePage"
         android:label="vectors"
         tools:layout="@layout/vectors" />
+    <fragment
+        android:id="@+id/kinematicsHomePage"
+        android:name="com.example.physicscalculator.KinematicsHomePage"
+        android:label="fragment_kinematics_home_page"
+        tools:layout="@layout/fragment_kinematics_home_page" >
+        <action
+            android:id="@+id/action_kinematicsHomePage_to_kinematicsAnswerPage"
+            app:destination="@id/kinematicsAnswerPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/kinematicsAnswerPage"
+        android:name="com.example.physicscalculator.KinematicsAnswerPage"
+        android:label="fragment_kinematics_answer_page"
+        tools:layout="@layout/fragment_kinematics_answer_page" />
 </navigation>

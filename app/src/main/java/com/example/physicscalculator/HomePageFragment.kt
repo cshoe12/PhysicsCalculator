@@ -30,6 +30,11 @@ class HomePage : Fragment() {
                 .navigate(R.id.action_homePage_to_vectorsHomePage)
         }
 
+        binding.kinematicsButton.setOnClickListener{view->
+            rootView.findNavController()
+                .navigate(R.id.action_homePage_to_kinematicsHomePage)
+        }
+
         return rootView
     }
 }

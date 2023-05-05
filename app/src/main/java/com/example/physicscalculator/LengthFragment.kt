@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.example.physicscalculator.databinding.FragmentLengthBinding
 import com.example.physicscalculator.databinding.FragmentUnitsHomeBinding
@@ -14,6 +15,10 @@ class LengthFragment : Fragment() {
     private var _binding: FragmentLengthBinding? = null
     private val binding get() = _binding!!
 
+    private var initUnit= ""
+    private var finalUnit= ""
+    private var initVal = ""
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -22,19 +27,43 @@ class LengthFragment : Fragment() {
         _binding = FragmentLengthBinding.inflate(inflater, container, false)
         val rootView = binding.root
 
+        initVal = binding.ogValueEditText.text.toString()
+
         spinner()
 
         return rootView
     }
+
+
     fun spinner(){
         val initialUnitsArrayAdapter = ArrayAdapter.createFromResource(requireActivity(), R.array.length_units,
             android.R.layout.simple_spinner_item)
         initialUnitsArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.initialSpinner.adapter = initialUnitsArrayAdapter
 
+        binding.initialSpinner.onItemSelectedListener = object:
+            AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(adapterView: AdapterView<*>, childView: View?, position: Int, ItemId: Long) {
+                initUnit = adapterView.getItemAtPosition(position).toString()
+            }
+            override fun onNothingSelected(adapterView: AdapterView<*>) {}
+        }
+
         val finalUnitsArrayAdapter = ArrayAdapter.createFromResource(requireActivity(), R.array.length_units,
             android.R.layout.simple_spinner_item)
         finalUnitsArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.finalSpinner.adapter = finalUnitsArrayAdapter
+
+        binding.finalSpinner.onItemSelectedListener = object:
+            AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(adapterView: AdapterView<*>, childView: View?, position: Int, ItemId: Long) {
+                finalUnit = adapterView.getItemAtPosition(position).toString()
+            }
+            override fun onNothingSelected(adapterView: AdapterView<*>) {}
+        }
+    }
+
+    fun calculate(){
+
     }
 }
