@@ -7,17 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import com.example.physicscalculator.databinding.FragmentLengthBinding
-import com.example.physicscalculator.databinding.FragmentUnitsHomeBinding
 
 class LengthFragment : Fragment() {
 
     private var _binding: FragmentLengthBinding? = null
     private val binding get() = _binding!!
 
-    private var initUnit= ""
-    private var finalUnit= ""
-    private var initVal = ""
+
+    private val viewModel: LengthViewModel by viewModels()
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,7 +29,7 @@ class LengthFragment : Fragment() {
         _binding = FragmentLengthBinding.inflate(inflater, container, false)
         val rootView = binding.root
 
-        initVal = binding.ogValueEditText.text.toString()
+        viewModel.setInitVal(binding.ogValueEditText.text.toString())
 
         spinner()
 
@@ -44,7 +46,7 @@ class LengthFragment : Fragment() {
         binding.initialSpinner.onItemSelectedListener = object:
             AdapterView.OnItemSelectedListener {
             override fun onItemSelected(adapterView: AdapterView<*>, childView: View?, position: Int, ItemId: Long) {
-                initUnit = adapterView.getItemAtPosition(position).toString()
+                viewModel.setInitUnit(adapterView.getItemAtPosition(position).toString())
             }
             override fun onNothingSelected(adapterView: AdapterView<*>) {}
         }
@@ -57,7 +59,7 @@ class LengthFragment : Fragment() {
         binding.finalSpinner.onItemSelectedListener = object:
             AdapterView.OnItemSelectedListener {
             override fun onItemSelected(adapterView: AdapterView<*>, childView: View?, position: Int, ItemId: Long) {
-                finalUnit = adapterView.getItemAtPosition(position).toString()
+                viewModel.setFinalUnit(adapterView.getItemAtPosition(position).toString())
             }
             override fun onNothingSelected(adapterView: AdapterView<*>) {}
         }
