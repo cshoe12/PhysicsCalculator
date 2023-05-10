@@ -19,8 +19,6 @@ class LengthFragment : Fragment() {
 
     private val viewModel: LengthViewModel by viewModels()
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,9 +27,12 @@ class LengthFragment : Fragment() {
         _binding = FragmentLengthBinding.inflate(inflater, container, false)
         val rootView = binding.root
 
-        viewModel.setInitVal(binding.ogValueEditText.text.toString())
-
         spinner()
+
+        binding.unitsGoButton.setOnClickListener{view->
+            viewModel.setInitVal(binding.ogValueEditText.text.toString())
+            binding.answerTextView.text = viewModel.calculate().toString()
+        }
 
         return rootView
     }
@@ -63,9 +64,5 @@ class LengthFragment : Fragment() {
             }
             override fun onNothingSelected(adapterView: AdapterView<*>) {}
         }
-    }
-
-    fun calculate(){
-
     }
 }
