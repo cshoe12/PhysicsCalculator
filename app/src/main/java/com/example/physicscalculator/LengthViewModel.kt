@@ -28,439 +28,467 @@ class LengthViewModel: ViewModel() {
         _initVal = strVal
     }
 
-    fun toMeters(unit: String, init : Double): Double{
+    //all of the rest of them to meters
+    //pass in value and current unit
+    fun toMeters(currentUnit: String, num : Double): Double{
         var meters = 0.0
-        if(unit =="cm"){
-            meters = init * 100
+        if(currentUnit =="cm"){
+            meters = num / 100
         }
-        else if(unit =="km"){
-            meters = _initVal.toDouble() / 1000
+        else if(currentUnit =="km"){
+            meters = num * 1000
         }
-        else if(unit =="mm"){
-            meters = _initVal.toDouble() * 1000
+        else if(currentUnit =="mm"){
+            meters = num / 1000
         }
-        else if(unit =="micro-m"){
-            meters = _initVal.toDouble() * 1000000
+        else if(currentUnit =="micro-m"){
+            meters = num / 1000000
         }
-        else if(unit =="nano-m"){
-            meters = _initVal.toDouble() * 1000000000
+        else if(currentUnit =="nano-m"){
+            meters = num / 1000000000
         }
-        else if(unit =="ft"){
-            meters = (_initVal.toDouble() * 39.37) / 12
+        else if(currentUnit =="ft"){
+            meters = (num * 12) / 39.37
         }
-        else if(unit =="in"){
-            meters = _initVal.toDouble() * 39.37
+        else if(currentUnit =="in"){
+            meters = num / 39.37
         }
-        else if(unit =="yd"){
-            meters = (_initVal.toDouble() * 39.37) / 36
+        else if(currentUnit =="yd"){
+            meters = (num * 36) / 39.37
 
         }
-        else if(unit =="mi"){
-            meters = (_initVal.toDouble() / 1000) * 0.621
+        else if(currentUnit =="mi"){
+            meters = (num / 0.621) * 1000
         }
-        else if(unit =="angstrom"){
-            meters = (_initVal.toDouble() * 39.37) * 4000000000
+        else if(currentUnit =="angstrom"){
+            meters = (num * 4000000000) / 39.37
         }
         return meters
     }
+    //from meters to all of the rest of them
+    //pass in value in meters and then converts to desired unit (other parameter)
 
-//    fun fromMeters(num: Double): Double{
-//        var final = 0.0
-//        if(_finalUnit =="cm"){
-//            final = num /
-//        }
-//        else if(_finalUnit =="km"){
-//            converted = toMeters("km")
-//        }
-//        else if(_finalUnit =="mm"){
-//            converted = toMeters("mm")
-//        }
-//        else if(_finalUnit =="micro-m"){
-//            converted = toMeters("micro-m")
-//        }
-//        else if(_finalUnit =="nano-m"){
-//            converted = toMeters("nano-m")
-//        }
-//        else if(_finalUnit =="ft"){
-//            converted = toMeters("ft")
-//        }
-//        else if(_finalUnit =="in"){
-//            converted = toMeters("in")
-//        }
-//        else if(_finalUnit =="yd"){
-//            converted = toMeters("yd")
-//        }
-//        else if(_finalUnit =="mi"){
-//            converted = toMeters("mi")
-//        }
-//        else if(_finalUnit =="angstrom"){
-//            converted = toMeters("angstrom")
-//        }
-//    }
+    fun fromMeters(numInMeters: Double, desiredUnit: String): Double{
+        var new = 0.0
+        if(desiredUnit =="cm"){
+            new = numInMeters * 100
+        }
+        else if(desiredUnit =="km"){
+            new = numInMeters / 1000
+        }
+        else if(desiredUnit =="mm"){
+            new = numInMeters * 1000
+        }
+        else if(desiredUnit =="micro-m"){
+            new = numInMeters * 1000000
+        }
+        else if(desiredUnit =="nano-m"){
+            new = numInMeters * 1000000000
+        }
+        else if(desiredUnit =="ft"){
+            new = (numInMeters * 39.37) / 12
+        }
+        else if(desiredUnit =="in"){
+            new = numInMeters * 39.37
+        }
+        else if(desiredUnit =="yd"){
+            new = (numInMeters *39.37) / 36
+        }
+        else if(desiredUnit =="mi"){
+            new = (numInMeters / 1000) * 0.621
+        }
 
-//    fun calculate(): Double{
-//        var converted: Double = 0.0
-//        if(_initUnit == "m"){
-//            if(_finalUnit =="cm"){
-//                converted = toMeters("cm")
-//            }
-//            else if(_finalUnit =="km"){
-//                converted = toMeters("km")
-//            }
-//            else if(_finalUnit =="mm"){
-//                converted = toMeters("mm")
-//            }
-//            else if(_finalUnit =="micro-m"){
-//                converted = toMeters("micro-m")
-//            }
-//            else if(_finalUnit =="nano-m"){
-//                converted = toMeters("nano-m")
-//            }
-//            else if(_finalUnit =="ft"){
-//                converted = toMeters("ft")
-//            }
-//            else if(_finalUnit =="in"){
-//                converted = toMeters("in")
-//            }
-//            else if(_finalUnit =="yd"){
-//                converted = toMeters("yd")
-//            }
-//            else if(_finalUnit =="mi"){
-//                converted = toMeters("mi")
-//            }
-//            else if(_finalUnit =="angstrom"){
-//                converted = toMeters("angstrom")
-//            }
-//        }
+        return new
+    }
 
-//        if(_initUnit == "cm"){
-//            if(_finalUnit =="m"){
-//
-//            }
-//            else if(_finalUnit =="km"){
-//
-//            }
-//            else if(_finalUnit =="mm"){
-//
-//            }
-//            else if(_finalUnit =="micro-m"){
-//
-//            }
-//            else if(_finalUnit =="nano-m"){
-//
-//            }
-//            else if(_finalUnit =="ft"){
-//
-//            }
-//            else if(_finalUnit =="in"){
-//
-//            }
-//            else if(_finalUnit =="yd"){
-//
-//            }
-//            else if(_finalUnit =="mi"){
-//
-//            }
-//            else if(_finalUnit =="angstrom"){
-//
-//            }
-//        }
-//
-//        if(_initUnit == "km"){
-//            if(_finalUnit =="cm"){
-//
-//            }
-//            else if(_finalUnit =="m"){
-//
-//            }
-//            else if(_finalUnit =="mm"){
-//
-//            }
-//            else if(_finalUnit =="micro-m"){
-//
-//            }
-//            else if(_finalUnit =="nano-m"){
-//
-//            }
-//            else if(_finalUnit =="ft"){
-//
-//            }
-//            else if(_finalUnit =="in"){
-//
-//            }
-//            else if(_finalUnit =="yd"){
-//
-//            }
-//            else if(_finalUnit =="mi"){
-//
-//            }
-//            else if(_finalUnit =="angstrom"){
-//
-//            }
-//        }
-//
-//        if(_initUnit == "mm"){
-//            if(_finalUnit =="cm"){
-//
-//            }
-//            else if(_finalUnit =="km"){
-//
-//            }
-//            else if(_finalUnit =="m"){
-//
-//            }
-//            else if(_finalUnit =="micro-m"){
-//
-//            }
-//            else if(_finalUnit =="nano-m"){
-//
-//            }
-//            else if(_finalUnit =="ft"){
-//
-//            }
-//            else if(_finalUnit =="in"){
-//
-//            }
-//            else if(_finalUnit =="yd"){
-//
-//            }
-//            else if(_finalUnit =="mi"){
-//
-//            }
-//            else if(_finalUnit =="angstrom"){
-//
-//            }
-//        }
-//        if(_initUnit == "micro-m"){
-//            if(_finalUnit =="cm"){
-//
-//            }
-//            else if(_finalUnit =="km"){
-//
-//            }
-//            else if(_finalUnit =="mm"){
-//
-//            }
-//            else if(_finalUnit =="m"){
-//
-//            }
-//            else if(_finalUnit =="nano-m"){
-//
-//            }
-//            else if(_finalUnit =="ft"){
-//
-//            }
-//            else if(_finalUnit =="in"){
-//
-//            }
-//            else if(_finalUnit =="yd"){
-//
-//            }
-//            else if(_finalUnit =="mi"){
-//
-//            }
-//            else if(_finalUnit =="angstrom"){
-//
-//            }
-//        }
-//
-//        if(_initUnit == "nano-m"){
-//            if(_finalUnit =="cm"){
-//
-//            }
-//            else if(_finalUnit =="km"){
-//
-//            }
-//            else if(_finalUnit =="mm"){
-//
-//            }
-//            else if(_finalUnit =="micro-m"){
-//
-//            }
-//            else if(_finalUnit =="mm"){
-//
-//            }
-//            else if(_finalUnit =="ft"){
-//
-//            }
-//            else if(_finalUnit =="in"){
-//
-//            }
-//            else if(_finalUnit =="yd"){
-//
-//            }
-//            else if(_finalUnit =="mi"){
-//
-//            }
-//            else if(_finalUnit =="angstrom"){
-//
-//            }
-//        }
-//
-//        if(_initUnit == "ft"){
-//            if(_finalUnit =="cm"){
-//
-//            }
-//            else if(_finalUnit =="km"){
-//
-//            }
-//            else if(_finalUnit =="mm"){
-//
-//            }
-//            else if(_finalUnit =="micro-m"){
-//
-//            }
-//            else if(_finalUnit =="nano-m"){
-//
-//            }
-//            else if(_finalUnit =="m"){
-//
-//            }
-//            else if(_finalUnit =="in"){
-//
-//            }
-//            else if(_finalUnit =="yd"){
-//
-//            }
-//            else if(_finalUnit =="mi"){
-//
-//            }
-//            else if(_finalUnit =="angstrom"){
-//
-//            }
-//        }
-//
-//        if(_initUnit == "in"){
-//            if(_finalUnit =="cm"){
-//
-//            }
-//            else if(_finalUnit =="km"){
-//
-//            }
-//            else if(_finalUnit =="mm"){
-//
-//            }
-//            else if(_finalUnit =="micro-m"){
-//
-//            }
-//            else if(_finalUnit =="nano-m"){
-//
-//            }
-//            else if(_finalUnit =="ft"){
-//
-//            }
-//            else if(_finalUnit =="m"){
-//
-//            }
-//            else if(_finalUnit =="yd"){
-//
-//            }
-//            else if(_finalUnit =="mi"){
-//
-//            }
-//            else if(_finalUnit =="angstrom"){
-//
-//            }
-//        }
-//
-//        if(_initUnit == "yd"){
-//            if(_finalUnit =="cm"){
-//
-//            }
-//            else if(_finalUnit =="km"){
-//
-//            }
-//            else if(_finalUnit =="mm"){
-//
-//            }
-//            else if(_finalUnit =="micro-m"){
-//
-//            }
-//            else if(_finalUnit =="nano-m"){
-//
-//            }
-//            else if(_finalUnit =="ft"){
-//
-//            }
-//            else if(_finalUnit =="in"){
-//
-//            }
-//            else if(_finalUnit =="m"){
-//
-//            }
-//            else if(_finalUnit =="mi"){
-//
-//            }
-//            else if(_finalUnit =="angstrom"){
-//
-//            }
-//        }
-//
-//        if(_initUnit == "mi"){
-//            if(_finalUnit =="cm"){
-//
-//            }
-//            else if(_finalUnit =="km"){
-//
-//            }
-//            else if(_finalUnit =="mm"){
-//
-//            }
-//            else if(_finalUnit =="micro-m"){
-//
-//            }
-//            else if(_finalUnit =="nano-m"){
-//
-//            }
-//            else if(_finalUnit =="ft"){
-//
-//            }
-//            else if(_finalUnit =="in"){
-//
-//            }
-//            else if(_finalUnit =="yd"){
-//
-//            }
-//            else if(_finalUnit =="m"){
-//
-//            }
-//            else if(_finalUnit =="angstrom"){
-//
-//            }
-//        }
-//
-//        if(_initUnit == "angstrom"){
-//            if(_finalUnit =="cm"){
-//
-//            }
-//            else if(_finalUnit =="km"){
-//
-//            }
-//            else if(_finalUnit =="mm"){
-//
-//            }
-//            else if(_finalUnit =="micro-m"){
-//
-//            }
-//            else if(_finalUnit =="nano-m"){
-//
-//            }
-//            else if(_finalUnit =="ft"){
-//
-//            }
-//            else if(_finalUnit =="in"){
-//
-//            }
-//            else if(_finalUnit =="yd"){
-//
-//            }
-//            else if(_finalUnit =="mi"){
-//
-//            }
-//            else if(_finalUnit =="m"){
-//
-//            }
-//        }
+    fun calculate(): Double{
+        var converted: Double = 0.0
+        if(_initUnit == "m"){
+            if(_finalUnit =="cm"){
+                converted = fromMeters(_initVal.toDouble(), "cm")
+            }
+            else if(_finalUnit =="km"){
+                converted = fromMeters(_initVal.toDouble(), "km")
+            }
+            else if(_finalUnit =="mm"){
+                converted = fromMeters(_initVal.toDouble(), "mm")
+            }
+            else if(_finalUnit =="micro-m"){
+                converted = fromMeters(_initVal.toDouble(), "micro-m")
+            }
+            else if(_finalUnit =="nano-m"){
+                converted = fromMeters(_initVal.toDouble(), "nano-m")
+            }
+            else if(_finalUnit =="ft"){
+                converted = fromMeters(_initVal.toDouble(), "ft")
+            }
+            else if(_finalUnit =="in"){
+                converted = fromMeters(_initVal.toDouble(), "in")
+            }
+            else if(_finalUnit =="yd"){
+                converted = fromMeters(_initVal.toDouble(), "yd")
+            }
+            else if(_finalUnit =="mi"){
+                converted = fromMeters(_initVal.toDouble(), "mi")
+            }
+
+        }
+
+        if(_initUnit == "cm"){
+            var convertedMeters = toMeters("cm", _initVal.toDouble())
+            if(_finalUnit =="m"){
+                converted = convertedMeters
+            }
+            else if(_finalUnit =="km"){
+                converted = fromMeters(convertedMeters, "km")
+            }
+            else if(_finalUnit =="mm"){
+                converted = fromMeters(convertedMeters, "mm")
+
+            }
+            else if(_finalUnit =="micro-m"){
+                converted = fromMeters(convertedMeters, "micro-m")
+
+            }
+            else if(_finalUnit =="nano-m"){
+                converted = fromMeters(convertedMeters, "nano-m")
+
+            }
+            else if(_finalUnit =="ft"){
+                converted = fromMeters(convertedMeters, "ft")
+
+            }
+            else if(_finalUnit =="in"){
+                converted = fromMeters(convertedMeters, "in")
+
+            }
+            else if(_finalUnit =="yd"){
+                converted = fromMeters(convertedMeters, "yd")
+
+            }
+            else if(_finalUnit =="mi"){
+                converted = fromMeters(convertedMeters, "mi")
+
+            }
+        }
+
+        if(_initUnit == "km"){
+            var convertedMeters = toMeters("km", _initVal.toDouble())
+            if(_finalUnit =="cm"){
+                converted = fromMeters(convertedMeters, "cm")
+            }
+            else if(_finalUnit =="m"){
+                converted = convertedMeters
+            }
+            else if(_finalUnit =="mm"){
+                converted = fromMeters(convertedMeters, "mm")
+            }
+            else if(_finalUnit =="micro-m"){
+                converted = fromMeters(convertedMeters, "micro-m")
+            }
+            else if(_finalUnit =="nano-m"){
+                converted = fromMeters(convertedMeters, "nano-m")
+
+            }
+            else if(_finalUnit =="ft"){
+                converted = fromMeters(convertedMeters, "ft")
+
+            }
+            else if(_finalUnit =="in"){
+                converted = fromMeters(convertedMeters, "in")
+
+            }
+            else if(_finalUnit =="yd"){
+                converted = fromMeters(convertedMeters, "yd")
+
+            }
+            else if(_finalUnit =="mi"){
+                converted = fromMeters(convertedMeters, "mi")
+
+            }
+        }
+
+        if(_initUnit == "mm"){
+            var convertedMeters = toMeters("mm", _initVal.toDouble())
+
+            if(_finalUnit =="cm"){
+                converted = fromMeters(convertedMeters, "cm")
+
+            }
+            else if(_finalUnit =="km"){
+                converted = fromMeters(convertedMeters, "km")
+
+            }
+            else if(_finalUnit =="m"){
+                converted = convertedMeters
+
+            }
+            else if(_finalUnit =="micro-m"){
+                converted = fromMeters(convertedMeters, "micro-m")
+
+            }
+            else if(_finalUnit =="nano-m"){
+                converted = fromMeters(convertedMeters, "nano-m")
+
+            }
+            else if(_finalUnit =="ft"){
+                converted = fromMeters(convertedMeters, "ft")
+
+            }
+            else if(_finalUnit =="in"){
+                converted = fromMeters(convertedMeters, "in")
+
+            }
+            else if(_finalUnit =="yd"){
+                converted = fromMeters(convertedMeters, "yd")
+
+            }
+            else if(_finalUnit =="mi"){
+                converted = fromMeters(convertedMeters, "mi")
+
+            }
+        }
+        if(_initUnit == "micro-m"){
+            var convertedMeters = toMeters("micro-m", _initVal.toDouble())
+
+            if(_finalUnit =="cm"){
+                converted = fromMeters(convertedMeters, "cm")
+
+            }
+            else if(_finalUnit =="km"){
+                converted = fromMeters(convertedMeters, "km")
+
+            }
+            else if(_finalUnit =="mm"){
+                converted = fromMeters(convertedMeters, "mm")
+
+            }
+            else if(_finalUnit =="m"){
+                converted = convertedMeters
+
+            }
+            else if(_finalUnit =="nano-m"){
+                converted = fromMeters(convertedMeters, "nano-m")
+
+            }
+            else if(_finalUnit =="ft"){
+                converted = fromMeters(convertedMeters, "ft")
+
+            }
+            else if(_finalUnit =="in"){
+                converted = fromMeters(convertedMeters, "in")
+
+            }
+            else if(_finalUnit =="yd"){
+                converted = fromMeters(convertedMeters, "yd")
+
+            }
+            else if(_finalUnit =="mi"){
+                converted = fromMeters(convertedMeters, "mi")
+
+            }
+        }
+
+        if(_initUnit == "nano-m"){
+            var convertedMeters = toMeters("nano-m", _initVal.toDouble())
+            if(_finalUnit =="cm"){
+                converted = fromMeters(convertedMeters, "cm")
+
+            }
+            else if(_finalUnit =="km"){
+                converted = fromMeters(convertedMeters, "km")
+
+            }
+            else if(_finalUnit =="mm"){
+                converted = fromMeters(convertedMeters, "mm")
+
+            }
+            else if(_finalUnit =="micro-m"){
+                converted = fromMeters(convertedMeters, "micro-m")
+
+            }
+            else if(_finalUnit =="m"){
+                converted = convertedMeters
+
+            }
+            else if(_finalUnit =="ft"){
+                converted = fromMeters(convertedMeters, "ft")
+
+            }
+            else if(_finalUnit =="in"){
+                converted = fromMeters(convertedMeters, "in")
+
+            }
+            else if(_finalUnit =="yd"){
+                converted = fromMeters(convertedMeters, "yd")
+
+            }
+            else if(_finalUnit =="mi"){
+                converted = fromMeters(convertedMeters, "mi")
+
+            }
+        }
+
+        if(_initUnit == "ft"){
+            var convertedMeters = toMeters("ft", _initVal.toDouble())
+
+            if(_finalUnit =="cm"){
+                converted = fromMeters(convertedMeters, "cm")
+
+            }
+            else if(_finalUnit =="km"){
+                converted = fromMeters(convertedMeters, "km")
+
+            }
+            else if(_finalUnit =="mm"){
+                converted = fromMeters(convertedMeters, "mm")
+
+            }
+            else if(_finalUnit =="micro-m"){
+                converted = fromMeters(convertedMeters, "micro-m")
+
+            }
+            else if(_finalUnit =="nano-m"){
+                converted = fromMeters(convertedMeters, "nano-m")
+
+            }
+            else if(_finalUnit =="m"){
+                converted = convertedMeters
+            }
+            else if(_finalUnit =="in"){
+                converted = fromMeters(convertedMeters, "in")
+
+            }
+            else if(_finalUnit =="yd"){
+                converted = fromMeters(convertedMeters, "yd")
+
+            }
+            else if(_finalUnit =="mi"){
+                converted = fromMeters(convertedMeters, "mi")
+
+            }
+        }
+
+        if(_initUnit == "in"){
+            var convertedMeters = toMeters("in", _initVal.toDouble())
+
+            if(_finalUnit =="cm"){
+                converted = fromMeters(convertedMeters, "cm")
+
+            }
+            else if(_finalUnit =="km"){
+                converted = fromMeters(convertedMeters, "km")
+
+            }
+            else if(_finalUnit =="mm"){
+                converted = fromMeters(convertedMeters, "mm")
+
+            }
+            else if(_finalUnit =="micro-m"){
+                converted = fromMeters(convertedMeters, "micro-m")
+
+            }
+            else if(_finalUnit =="nano-m"){
+                converted = fromMeters(convertedMeters, "nano-m")
+
+            }
+            else if(_finalUnit =="ft"){
+                converted = fromMeters(convertedMeters, "ft")
+
+            }
+            else if(_finalUnit =="m"){
+                converted = convertedMeters
+
+            }
+            else if(_finalUnit =="yd"){
+                converted = fromMeters(convertedMeters, "yd")
+
+            }
+            else if(_finalUnit =="mi"){
+                converted = fromMeters(convertedMeters, "mi")
+
+            }
+        }
+
+        if(_initUnit == "yd"){
+            var convertedMeters = toMeters("in", _initVal.toDouble())
+
+            if(_finalUnit =="cm"){
+                converted = fromMeters(convertedMeters, "cm")
+
+            }
+            else if(_finalUnit =="km"){
+                converted = fromMeters(convertedMeters, "km")
+
+            }
+            else if(_finalUnit =="mm"){
+                converted = fromMeters(convertedMeters, "mm")
+
+            }
+            else if(_finalUnit =="micro-m"){
+                converted = fromMeters(convertedMeters, "micro-m")
+
+            }
+            else if(_finalUnit =="nano-m"){
+                converted = fromMeters(convertedMeters, "nano-m")
+
+            }
+            else if(_finalUnit =="ft"){
+                converted = fromMeters(convertedMeters, "ft")
+
+            }
+            else if(_finalUnit =="in"){
+                converted = fromMeters(convertedMeters, "in")
+
+            }
+            else if(_finalUnit =="m"){
+                converted = convertedMeters
+            }
+            else if(_finalUnit =="mi"){
+                converted = fromMeters(convertedMeters, "mi")
+
+            }
+        }
+
+        if(_initUnit == "mi"){
+            var convertedMeters = toMeters("in", _initVal.toDouble())
+
+            if(_finalUnit =="cm"){
+                converted = fromMeters(convertedMeters, "cm")
+
+            }
+            else if(_finalUnit =="km"){
+                converted = fromMeters(convertedMeters, "km")
+
+            }
+            else if(_finalUnit =="mm"){
+                converted = fromMeters(convertedMeters, "mm")
+
+            }
+            else if(_finalUnit =="micro-m"){
+                converted = fromMeters(convertedMeters, "micro-m")
+
+            }
+            else if(_finalUnit =="nano-m"){
+                converted = fromMeters(convertedMeters, "nano-m")
+
+            }
+            else if(_finalUnit =="ft"){
+                converted = fromMeters(convertedMeters, "ft")
+
+            }
+            else if(_finalUnit =="in"){
+                converted = fromMeters(convertedMeters, "in")
+
+            }
+            else if(_finalUnit =="yd"){
+                converted = fromMeters(convertedMeters, "yd")
+
+            }
+            else if(_finalUnit =="m"){
+                converted = convertedMeters
+            }
+        }
         return converted
     }
 }
