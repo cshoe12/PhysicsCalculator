@@ -144,31 +144,24 @@ class LengthViewModel: ViewModel() {
             }
             else if(_finalUnit =="mm"){
                 converted = fromMeters(convertedMeters, "mm")
-
             }
             else if(_finalUnit =="micro-m"){
                 converted = fromMeters(convertedMeters, "micro-m")
-
             }
             else if(_finalUnit =="nano-m"){
                 converted = fromMeters(convertedMeters, "nano-m")
-
             }
             else if(_finalUnit =="ft"){
                 converted = fromMeters(convertedMeters, "ft")
-
             }
             else if(_finalUnit =="in"){
                 converted = fromMeters(convertedMeters, "in")
-
             }
             else if(_finalUnit =="yd"){
                 converted = fromMeters(convertedMeters, "yd")
-
             }
             else if(_finalUnit =="mi"){
                 converted = fromMeters(convertedMeters, "mi")
-
             }
         }
 

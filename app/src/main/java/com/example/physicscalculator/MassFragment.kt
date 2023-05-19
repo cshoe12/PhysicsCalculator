@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.fragment.app.viewModels
 import com.example.physicscalculator.databinding.FragmentLengthBinding
 import com.example.physicscalculator.databinding.FragmentMassBinding
 
@@ -14,6 +15,9 @@ class MassFragment : Fragment() {
 
     private var _binding: FragmentMassBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel: MassViewModel by viewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,6 +28,10 @@ class MassFragment : Fragment() {
         val rootView = binding.root
 
         spinner()
+        binding.unitsGoButton.setOnClickListener{view->
+            viewModel.setInitVal(binding.ogValueEditText.text.toString())
+            binding.answerTextView.text = viewModel.calculateMass().toString()
+        }
 
         return rootView
     }
