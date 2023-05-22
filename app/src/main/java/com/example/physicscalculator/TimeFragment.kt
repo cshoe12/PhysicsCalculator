@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.fragment.app.viewModels
 
 import com.example.physicscalculator.databinding.FragmentTimeBinding
 
@@ -13,6 +14,9 @@ class TimeFragment : Fragment() {
 
     private var _binding: FragmentTimeBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel: TimeViewModel by viewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

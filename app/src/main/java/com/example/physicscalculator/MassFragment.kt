@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.fragment.app.viewModels
 import com.example.physicscalculator.databinding.FragmentLengthBinding
@@ -41,9 +42,25 @@ class MassFragment : Fragment() {
         initialUnitsArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.initialSpinner.adapter = initialUnitsArrayAdapter
 
+        binding.initialSpinner.onItemSelectedListener = object:
+            AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(adapterView: AdapterView<*>, childView: View?, position: Int, ItemId: Long) {
+                viewModel.setInitUnit(adapterView.getItemAtPosition(position).toString())
+            }
+            override fun onNothingSelected(adapterView: AdapterView<*>) {}
+        }
+
         val finalUnitsArrayAdapter = ArrayAdapter.createFromResource(requireActivity(), R.array.mass_units,
             android.R.layout.simple_spinner_item)
         finalUnitsArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.finalSpinner.adapter = finalUnitsArrayAdapter
+
+        binding.finalSpinner.onItemSelectedListener = object:
+            AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(adapterView: AdapterView<*>, childView: View?, position: Int, ItemId: Long) {
+                viewModel.setFinalUnit(adapterView.getItemAtPosition(position).toString())
+            }
+            override fun onNothingSelected(adapterView: AdapterView<*>) {}
+        }
     }
 }
