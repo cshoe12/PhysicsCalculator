@@ -63,13 +63,13 @@ class MassViewModel: ViewModel() {
         var converted = 0.0
         if(_initUnit == "g"){
             if(_finalUnit == "kg"){
-                converted = toGrams("kg", _initVal.toDouble())
+                converted = fromGrams(_initVal.toDouble(), "kg")
             }
             else if(_finalUnit =="mg"){
-                converted = toGrams("mg", _initVal.toDouble())
+                converted = fromGrams( _initVal.toDouble(), "mg")
             }
             else if(_finalUnit =="lbs"){
-                converted = toGrams("lbs", _initVal.toDouble())
+                converted = fromGrams(_initVal.toDouble(), "lbs")
             }
         }
 
