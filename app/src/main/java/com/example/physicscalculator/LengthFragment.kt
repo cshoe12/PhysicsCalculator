@@ -7,9 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.example.physicscalculator.databinding.FragmentLengthBinding
+import com.google.android.material.snackbar.Snackbar
 
 class LengthFragment : Fragment() {
 
@@ -31,7 +33,21 @@ class LengthFragment : Fragment() {
 
         binding.unitsGoButton.setOnClickListener{view->
             viewModel.setInitVal(binding.ogValueEditText.text.toString())
-            binding.answerTextView.text = viewModel.calculate().toString()
+
+            if(viewModel.initUnit == viewModel.finalUnit){
+                Toast.makeText(activity, R.string.same_units, Toast.LENGTH_SHORT).show()
+            }
+            else if(viewModel.initVal == ""){
+                Snackbar.make(
+                    binding.myCoordinatorLayout,
+                    R.string.no_value,
+                    Snackbar.LENGTH_SHORT
+                ).show()
+
+            }
+            else {
+                binding.answerTextView.text = viewModel.calculate().toString()
+            }
         }
 
         return rootView
