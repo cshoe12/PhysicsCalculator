@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_homePage_to_kinematicsHomePage"
             app:destination="@id/kinematicsHomePage" />
+        <action
+            android:id="@+id/action_homePage_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
     </fragment>
     <fragment
         android:id="@+id/lengthFragment"
@@ -77,4 +80,9 @@
         android:name="com.example.physicscalculator.KinematicsAnswerPage"
         android:label="fragment_kinematics_answer_page"
         tools:layout="@layout/fragment_kinematics_answer_page" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.physicscalculator.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
 </navigation>
