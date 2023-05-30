@@ -38,6 +38,11 @@ class UnitsHomeFragment : Fragment() {
                 .navigate(R.id.action_unitsHomeFragment_to_timeFragment)
         }
 
+        binding.pastButton.setOnClickListener { view->
+            rootView.findNavController()
+                .navigate(R.id.action_unitsHomeFragment_to_pastConversionsFragment)
+        }
+
         return rootView
     }
 }
