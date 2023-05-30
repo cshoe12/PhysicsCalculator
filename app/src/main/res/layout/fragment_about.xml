@@ -37,6 +37,8 @@
         android:id="@+id/call_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="10dp"
         android:text="call"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,27 +48,32 @@
         android:id="@+id/website_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
         android:text="website"
         android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/button4"
-        app:layout_constraintStart_toEndOf="@+id/button4" />
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/email_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="email"
         android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/button"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/call_button"
+        app:layout_constraintEnd_toStartOf="@+id/location_button"
+        app:layout_constraintStart_toEndOf="@+id/call_button" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/location_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
         android:text="location"
         android:textSize="13sp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button3" />
+        app:layout_constraintEnd_toStartOf="@+id/website_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

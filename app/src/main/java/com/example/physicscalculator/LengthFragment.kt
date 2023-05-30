@@ -1,5 +1,6 @@
 package com.example.physicscalculator
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -20,6 +21,8 @@ class LengthFragment : Fragment() {
 
 
     private val viewModel: LengthViewModel by viewModels()
+
+    lateinit var media: MediaPlayer
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,6 +50,9 @@ class LengthFragment : Fragment() {
             }
             else {
                 binding.answerTextView.text = viewModel.calculate().toString()
+                media = MediaPlayer.create(context, R.raw.answer)
+                media.start()
+
             }
         }
 
