@@ -1,12 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-<!--    <TextView-->
-<!--        android:id="@+id/i_val"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="00"/>-->
+    <TextView
+        android:id="@+id/i_val_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="00.00"
+        android:textSize="25sp"
+        android:textColor="@color/darkest_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/i_unit_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="units"
+        android:textColor="@color/darkest_blue"
+        android:textSize="25sp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/i_val_textView"
+        app:layout_constraintStart_toEndOf="@+id/i_val_textView"
+        app:layout_constraintTop_toTopOf="@+id/i_val_textView" />
+
+    <ImageView
+        android:id="@+id/arrow_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/i_unit_textView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/f_val_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginLeft="5dp"
+        android:text="00.00"
+        android:textColor="@color/darkest_blue"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/i_unit_textView"
+        app:layout_constraintStart_toEndOf="@+id/arrow_imageView"
+        app:layout_constraintTop_toTopOf="@+id/i_unit_textView" />
+
+    <TextView
+        android:id="@+id/f_unit_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="units"
+        android:textSize="25sp"
+        android:textColor="@color/darkest_blue"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/f_val_textView"
+        app:layout_constraintStart_toEndOf="@+id/f_val_textView"
+        app:layout_constraintTop_toTopOf="@+id/f_val_textView" />
+
+    <TextView
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/home_buttonText_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
