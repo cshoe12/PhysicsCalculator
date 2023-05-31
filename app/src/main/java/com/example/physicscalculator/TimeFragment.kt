@@ -19,7 +19,7 @@ class TimeFragment : Fragment() {
     private var _binding: FragmentTimeBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: TimeViewModel by viewModels()
+    private val viewModel: ViewModel by viewModels()
 
     lateinit var media: MediaPlayer
 
@@ -47,7 +47,7 @@ class TimeFragment : Fragment() {
 
             }
             else {
-                binding.answerTextView.text = viewModel.calculate().toString()
+                binding.answerTextView.text = viewModel.calculateTime().toString()
                 media = MediaPlayer.create(context, R.raw.answer)
                 media.start()
             }

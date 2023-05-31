@@ -10,7 +10,6 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import com.example.physicscalculator.databinding.FragmentLengthBinding
 import com.example.physicscalculator.databinding.FragmentMassBinding
 import com.google.android.material.snackbar.Snackbar
 
@@ -20,7 +19,7 @@ class MassFragment : Fragment() {
     private var _binding: FragmentMassBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: MassViewModel by viewModels()
+    private val viewModel: ViewModel by viewModels()
 
     lateinit var media: MediaPlayer
 

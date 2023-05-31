@@ -12,6 +12,8 @@ class PastConversionViewHolder(val binding: ListItemLayoutBinding):
         currentPastConversion = pc
         binding.iUnitTextView.text = pc.initialUnit
         binding.fUnitTextView.text = pc.finalUnit
+        binding.iValTextView.text = pc.initialNum
+        binding.fValTextView.text = pc.finalNum
     }
 
 

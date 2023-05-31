@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.example.physicscalculator.databinding.FragmentLengthBinding
 import com.google.android.material.snackbar.Snackbar
@@ -20,7 +19,7 @@ class LengthFragment : Fragment() {
     private val binding get() = _binding!!
 
 
-    private val viewModel: LengthViewModel by viewModels()
+    private val viewModel: ViewModel by viewModels()
 
     lateinit var media: MediaPlayer
 
@@ -49,7 +48,7 @@ class LengthFragment : Fragment() {
 
             }
             else {
-                binding.answerTextView.text = viewModel.calculate().toString()
+                binding.answerTextView.text = viewModel.calculateLength().toString()
                 media = MediaPlayer.create(context, R.raw.answer)
                 media.start()
 

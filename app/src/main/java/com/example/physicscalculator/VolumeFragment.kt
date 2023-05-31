@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Spinner
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.example.physicscalculator.databinding.FragmentVolumeBinding
@@ -19,7 +18,7 @@ class VolumeFragment : Fragment() {
     private var _binding: FragmentVolumeBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: VolumeViewModel by viewModels()
+    private val viewModel: ViewModel by viewModels()
 
     lateinit var media: MediaPlayer
 
@@ -46,7 +45,7 @@ class VolumeFragment : Fragment() {
                 ).show()
             }
             else {
-                binding.answerTextView.text = viewModel.calculate().toString()
+                binding.answerTextView.text = viewModel.calculateVolume().toString()
                 media = MediaPlayer.create(context, R.raw.answer)
                 media.start()
             }
