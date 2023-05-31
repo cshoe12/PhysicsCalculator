@@ -39,7 +39,7 @@ class LengthFragment : Fragment() {
             if(viewModel.initUnit == viewModel.finalUnit){
                 Toast.makeText(activity, R.string.same_units, Toast.LENGTH_SHORT).show()
             }
-            else if(viewModel.initVal == ""){
+            else if(viewModel.initVal.value == ""){
                 Snackbar.make(
                     binding.myCoordinatorLayout,
                     R.string.no_value,
@@ -48,12 +48,16 @@ class LengthFragment : Fragment() {
 
             }
             else {
-                binding.answerTextView.text = viewModel.calculateLength().toString()
+                val response = viewModel.calculateLength().toString()
+                viewModel.addToList(PastConversion(viewModel.initVal, response, viewModel.initUnit, viewModel.finalUnit))
+                binding.answerTextView.text = response
                 media = MediaPlayer.create(context, R.raw.answer)
                 media.start()
-
             }
         }
+
+
+
 
         return rootView
     }

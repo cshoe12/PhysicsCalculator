@@ -25,8 +25,9 @@ class PastConversionsFragment : Fragment() {
         val rootView = binding.root
 
 
-
-
+        val tempList = viewModel.conversionList
+        val mAdapter = PastConversionAdapter(tempList)
+        binding.recyclerView.adapter = mAdapter
 
         return rootView
     }

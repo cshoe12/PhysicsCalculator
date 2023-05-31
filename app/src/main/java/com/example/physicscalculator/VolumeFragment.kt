@@ -37,7 +37,7 @@ class VolumeFragment : Fragment() {
             if(viewModel.initUnit == viewModel.finalUnit){
                 Toast.makeText(activity, R.string.same_units, Toast.LENGTH_SHORT).show()
             }
-            else if(viewModel.initVal == ""){
+            else if(viewModel.initVal.value == ""){
                 Snackbar.make(
                     binding.myCoordinatorLayout,
                     R.string.no_value,
@@ -45,7 +45,9 @@ class VolumeFragment : Fragment() {
                 ).show()
             }
             else {
-                binding.answerTextView.text = viewModel.calculateVolume().toString()
+                val response = viewModel.calculateLength().toString()
+                viewModel.setFinalVal(response)
+                binding.answerTextView.text = response
                 media = MediaPlayer.create(context, R.raw.answer)
                 media.start()
             }
