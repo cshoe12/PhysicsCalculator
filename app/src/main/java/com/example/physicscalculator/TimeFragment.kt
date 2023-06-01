@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 
 import com.example.physicscalculator.databinding.FragmentTimeBinding
@@ -19,7 +20,7 @@ class TimeFragment : Fragment() {
     private var _binding: FragmentTimeBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: ViewModel by viewModels()
+    private val viewModel: ViewModel by activityViewModels()
 
     lateinit var media: MediaPlayer
 
@@ -38,7 +39,7 @@ class TimeFragment : Fragment() {
             if(viewModel.initUnit == viewModel.finalUnit){
                 Toast.makeText(activity, R.string.same_units, Toast.LENGTH_SHORT).show()
             }
-            else if(viewModel.initVal.value == ""){
+            else if(viewModel.initVal == ""){
                 Snackbar.make(
                     binding.myCoordinatorLayout,
                     R.string.no_value,
@@ -47,8 +48,8 @@ class TimeFragment : Fragment() {
 
             }
             else {
-                val response = viewModel.calculateLength().toString()
-                viewModel.setFinalVal(response)
+                val response = viewModel.calculateTime().toString()
+                viewModel.addToList(PastConversion(viewModel.initVal, response, viewModel.initUnit, viewModel.finalUnit))
                 binding.answerTextView.text = response
                 media = MediaPlayer.create(context, R.raw.answer)
                 media.start()
