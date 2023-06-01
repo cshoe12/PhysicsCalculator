@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="Physics Calculator"
+        android:text="Unit Converter"
         android:textSize="45sp"
         android:textStyle="bold"
         android:textColor ="@color/home_title_blue"
@@ -22,58 +22,27 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/units_button"
+        android:id="@+id/start_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Units"
-        android:textColor="@color/white"
         android:backgroundTint="@color/dark_blue"
-        android:textSize="30sp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/vectors_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_title_textView"
-        app:layout_constraintVertical_chainStyle="packed" />
-
-    <Button
-        android:id="@+id/vectors_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Vectors"
-        android:textSize="30sp"
+        android:text="Start!"
         android:textColor="@color/white"
-        android:backgroundTint="@color/darker_blue"
-        android:layout_marginTop="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/kinematics_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/units_button" />
-
-    <Button
-        android:id="@+id/kinematics_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kinematics"
         android:textSize="30sp"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/more_darker_blue"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/atom_imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vectors_button" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/atom_imageView"
         android:layout_width="230dp"
         android:layout_height="230dp"
-        android:layout_marginTop="40dp"
         android:layout_marginBottom="40dp"
         android:src="@drawable/atom_pt5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kinematics_button" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

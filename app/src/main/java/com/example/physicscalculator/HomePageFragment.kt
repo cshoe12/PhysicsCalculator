@@ -20,18 +20,16 @@ class HomePage : Fragment() {
         _binding = FragmentHomePageBinding.inflate(inflater, container, false)
         val rootView = binding.root
 
-        binding.unitsButton.setOnClickListener{view->
+        binding.startButton.setOnClickListener{view->
             rootView.findNavController()
                 .navigate(R.id.action_homePage_to_unitsHomeFragment)
         }
-        binding.vectorsButton.setOnClickListener{
-            rootView.findNavController()
-                .navigate(R.id.action_homePage_to_vectorsHomePage)
-        }
 
-        binding.kinematicsButton.setOnClickListener{view->
-            rootView.findNavController()
-                .navigate(R.id.action_homePage_to_kinematicsHomePage)
+        binding.atomImageView.setOnClickListener{view ->
+            binding.atomImageView.animate().apply{
+                duration = 1000
+                rotationYBy(360f)
+            }.start()
         }
 
         setHasOptionsMenu(true)

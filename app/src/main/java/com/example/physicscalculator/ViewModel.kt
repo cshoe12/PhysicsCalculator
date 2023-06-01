@@ -22,9 +22,9 @@ class ViewModel: ViewModel() {
     val initVal: String
         get() = _initVal
 
-    private var _finalVal = ""
-    val finalVal: String
-        get() = _finalVal
+//    private var _finalVal = ""
+//    val finalVal: String
+//        get() = _finalVal
 
     fun setInitUnit(strInit: String){
         _initUnit = strInit
@@ -37,10 +37,10 @@ class ViewModel: ViewModel() {
     fun setInitVal(strVal: String){
         _initVal = strVal
     }
-
-    fun setFinalVal(strVal: String){
-        _finalVal = strVal
-    }
+//
+//    fun setFinalVal(strVal: String){
+//        _finalVal = strVal
+//    }
 
     fun addToList(new: PastConversion){
         _conversionList.add(new)
