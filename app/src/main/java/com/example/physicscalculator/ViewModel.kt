@@ -35,11 +35,11 @@ class ViewModel: ViewModel() {
     }
 
     fun setInitVal(strVal: String){
-        _initVal.value = strVal
+        _initVal = strVal
     }
 
     fun setFinalVal(strVal: String){
-        _finalVal.value = strVal
+        _finalVal = strVal
     }
 
     fun addToList(new: PastConversion){
@@ -339,7 +339,7 @@ class ViewModel: ViewModel() {
                 converted = convertedSec
             } else if (_finalUnit == "micro-s") {
                 converted = fromSeconds(convertedSec, "micro-s")
-            } else if (_finalUnit.== "milli-s") {
+            } else if (_finalUnit == "milli-s") {
                 converted = fromSeconds(convertedSec, "milli-s")
             } else if (_finalUnit == "min") {
                 converted = fromSeconds(convertedSec, "min")
@@ -367,7 +367,7 @@ class ViewModel: ViewModel() {
                 converted = fromSeconds(convertedSec, "hour")
             } else if (_finalUnit == "day") {
                 converted = fromSeconds(convertedSec, "day")
-            } else if (_finalUnit. == "year") {
+            } else if (_finalUnit == "year") {
                 converted = fromSeconds(convertedSec, "year")
             }
         }
@@ -478,37 +478,37 @@ class ViewModel: ViewModel() {
         var converted: Double = 0.0
         if(_initUnit == "m"){
             if(_finalUnit =="cm"){
-                converted = fromMeters(_initVal.value?.toDouble() ?: 0.0, "cm")
+                converted = fromMeters(_initVal.toDouble(), "cm")
             }
             else if(_finalUnit =="km"){
-                converted = fromMeters(_initVal.value?.toDouble() ?: 0.0, "km")
+                converted = fromMeters(_initVal.toDouble(), "km")
             }
             else if(_finalUnit =="mm"){
-                converted = fromMeters(_initVal.value?.toDouble() ?: 0.0, "mm")
+                converted = fromMeters(_initVal.toDouble(), "mm")
             }
             else if(_finalUnit =="micro-m"){
-                converted = fromMeters(_initVal.value?.toDouble() ?: 0.0, "micro-m")
+                converted = fromMeters(_initVal.toDouble(), "micro-m")
             }
             else if(_finalUnit =="nano-m"){
-                converted = fromMeters(_initVal.value?.toDouble() ?: 0.0, "nano-m")
+                converted = fromMeters(_initVal.toDouble(), "nano-m")
             }
             else if(_finalUnit =="ft"){
-                converted = fromMeters(_initVal.value?.toDouble() ?: 0.0, "ft")
+                converted = fromMeters(_initVal.toDouble(), "ft")
             }
             else if(_finalUnit =="in"){
-                converted = fromMeters(_initVal.value?.toDouble() ?: 0.0, "in")
+                converted = fromMeters(_initVal.toDouble(), "in")
             }
             else if(_finalUnit =="yd"){
-                converted = fromMeters(_initVal.value?.toDouble() ?: 0.0, "yd")
+                converted = fromMeters(_initVal.toDouble(), "yd")
             }
             else if(_finalUnit =="mi"){
-                converted = fromMeters(_initVal.value?.toDouble() ?: 0.0, "mi")
+                converted = fromMeters(_initVal.toDouble(), "mi")
             }
 
         }
 
         if(_initUnit == "cm"){
-            var convertedMeters = toMeters("cm", _initVal.value?.toDouble() ?: 0.0)
+            var convertedMeters = toMeters("cm", _initVal.toDouble())
             if(_finalUnit =="m"){
                 converted = convertedMeters
             }
@@ -539,7 +539,7 @@ class ViewModel: ViewModel() {
         }
 
         if(_initUnit == "km"){
-            var convertedMeters = toMeters("km", _initVal.value?.toDouble() ?: 0.0)
+            var convertedMeters = toMeters("km", _initVal.toDouble())
             if(_finalUnit =="cm"){
                 converted = fromMeters(convertedMeters, "cm")
             }
@@ -575,7 +575,7 @@ class ViewModel: ViewModel() {
         }
 
         if(_initUnit == "mm"){
-            var convertedMeters = toMeters("mm", _initVal.value?.toDouble() ?: 0.0)
+            var convertedMeters = toMeters("mm", _initVal.toDouble())
 
             if(_finalUnit =="cm"){
                 converted = fromMeters(convertedMeters, "cm")
@@ -615,7 +615,7 @@ class ViewModel: ViewModel() {
             }
         }
         if(_initUnit == "micro-m"){
-            var convertedMeters = toMeters("micro-m", _initVal.value?.toDouble() ?: 0.0)
+            var convertedMeters = toMeters("micro-m", _initVal.toDouble())
 
             if(_finalUnit =="cm"){
                 converted = fromMeters(convertedMeters, "cm")
@@ -656,7 +656,7 @@ class ViewModel: ViewModel() {
         }
 
         if(_initUnit == "nano-m"){
-            var convertedMeters = toMeters("nano-m", _initVal.value?.toDouble() ?: 0.0)
+            var convertedMeters = toMeters("nano-m", _initVal.toDouble())
             if(_finalUnit =="cm"){
                 converted = fromMeters(convertedMeters, "cm")
 
@@ -696,7 +696,7 @@ class ViewModel: ViewModel() {
         }
 
         if(_initUnit == "ft"){
-            var convertedMeters = toMeters("ft", _initVal.value?.toDouble() ?: 0.0)
+            var convertedMeters = toMeters("ft", _initVal.toDouble())
 
             if(_finalUnit =="cm"){
                 converted = fromMeters(convertedMeters, "cm")
@@ -736,7 +736,7 @@ class ViewModel: ViewModel() {
         }
 
         if(_initUnit == "in"){
-            var convertedMeters = toMeters("in", _initVal.value?.toDouble() ?: 0.0)
+            var convertedMeters = toMeters("in", _initVal.toDouble())
 
             if(_finalUnit =="cm"){
                 converted = fromMeters(convertedMeters, "cm")
@@ -777,7 +777,7 @@ class ViewModel: ViewModel() {
         }
 
         if(_initUnit == "yd"){
-            var convertedMeters = toMeters("in", _initVal.value?.toDouble() ?: 0.0)
+            var convertedMeters = toMeters("in", _initVal.toDouble())
 
             if(_finalUnit =="cm"){
                 converted = fromMeters(convertedMeters, "cm")
@@ -817,7 +817,7 @@ class ViewModel: ViewModel() {
         }
 
         if(_initUnit == "mi"){
-            var convertedMeters = toMeters("in", _initVal.value?.toDouble() ?: 0.0)
+            var convertedMeters = toMeters("in", _initVal.toDouble())
 
             if(_finalUnit =="cm"){
                 converted = fromMeters(convertedMeters, "cm")
